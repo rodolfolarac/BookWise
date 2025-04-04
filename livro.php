@@ -1,3 +1,8 @@
+<?php
+require 'dados.php';
+$id = $_REQUEST['id'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
