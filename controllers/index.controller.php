@@ -2,6 +2,4 @@
 require 'dados.php';
 $view = "index";
 
-view('index',[
-    'livrvos' => $livros
-]);
+view('index', compact('livros'));
