@@ -1,8 +1,3 @@
-<?php
-require 'dados.php';
-$id = $_REQUEST['id'];
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,6 +24,7 @@ $id = $_REQUEST['id'];
     </header>
 
     <main class="mx-auto max-w-screen-lg space-y-6">
+        <?php require "views/{$view}.view.php" ?>
     </main>
 </body>
 
