@@ -1,14 +1,7 @@
 <?php
-$livros = [
-    ['id' => 1, 'titulo' => 'Senhor dos Anéis', 'autor' => 'J.R.R. Tolkien', 'descricao' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book'],
-    ['id' => 2, 'titulo' => 'Senhor dos Anéis', 'autor' => 'J.R.R. Tolkien', 'descricao' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book'],
-    ['id' => 3, 'titulo' => 'Senhor dos Anéis', 'autor' => 'J.R.R. Tolkien', 'descricao' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book'],
-    ['id' => 4, 'titulo' => 'Senhor dos Anéis', 'autor' => 'J.R.R. Tolkien', 'descricao' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book'],
-    ['id' => 5, 'titulo' => 'Senhor dos Anéis', 'autor' => 'J.R.R. Tolkien', 'descricao' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book'],
-    ['id' => 6, 'titulo' => 'Senhor dos Anéis', 'autor' => 'J.R.R. Tolkien', 'descricao' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book'],
-    ['id' => 7, 'titulo' => 'Senhor dos Anéis', 'autor' => 'J.R.R. Tolkien', 'descricao' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book'],
-    ['id' => 8, 'titulo' => 'Senhor dos Anéis', 'autor' => 'J.R.R. Tolkien', 'descricao' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book'],
-    ['id' => 9, 'titulo' => 'Senhor dos Anéis', 'autor' => 'J.R.R. Tolkien', 'descricao' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book'],
-    ['id' => 10, 'titulo' => 'Senhor dos Anéis', 'autor' => 'J.R.R. Tolkien', 'descricao' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book'],
-    ['id' => 11, 'titulo' => 'Senhor dos Anéis', 'autor' => 'J.R.R. Tolkien', 'descricao' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book']
-];
+
+$db = new PDO('sqlite:database.sqlite');
+$query = $db->query("select * from livros");
+
+
+$livros = $query->fetchAll();
