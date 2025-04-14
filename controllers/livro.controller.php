@@ -1,14 +1,5 @@
 <?php
 
-require 'dados.php';
+$livro = (new DB)->Livro($_REQUEST['id']);
 
-$id =  $_REQUEST['id'];
-
-$filtrado = array_filter($livros, fn($l) => $l['id'] == $id);
-
-$livro = array_pop($filtrado);
-
-$view = "livro";
-
-//require "views/template/app.php";
 view('livro', compact('livro'));
