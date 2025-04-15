@@ -1,6 +1,6 @@
 <?php
 
-$livro = (new DB)->query(
+$livro = $database->query(
     "SELECT * FROM livros WHERE id = :id",
     Livro::class,
     ['id' => $_GET['id']]

@@ -1,7 +1,7 @@
 <?php
 $pesquisar = $_REQUEST['pesquisar'] ?? '';
 
-$livros = (new DB)->query(
+$livros = $database->query(
     query: "SELECT * FROM livros WHERE titulo LIKE :filtro
     OR descricao LIKE :filtro
     OR autor LIKE :filtro",
