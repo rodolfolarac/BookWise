@@ -7,11 +7,18 @@ class DB
 
     public function __construct($config)
     {
+        $this->db = new PDO($this->getDsn($config));
+    }
+    private function getDsn($config)
+    {
+        $driver = $config['driver'];
+        unset($config['driver']);
 
-
-        $connectionString = $config['driver'] . ':' . $config['database'];
-
-        $this->db = new PDO($connectionString);
+        $dsn = $driver . ':' . http_build_query($config, '', ';');
+        if ($driver == 'sqlite') {
+            $dsn = $config['driver'] . ':' . $config['database'];
+        }
+        return $dsn;
     }
 
     public function query($query, $class = null, $params = [])
